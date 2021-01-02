@@ -1,2 +1,2 @@
-# webprogramozasII
+# webprogramozas II
 Webprogramozás II
