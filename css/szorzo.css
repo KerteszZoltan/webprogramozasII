@@ -1,0 +1,19 @@
+.main_page {
+    display: flex;
+    text-align: center;
+    width: 99%;
+    height: 80%;
+    padding: 10px;
+    }
+    
+.main_page .part{
+    width: 50%;
+    overflow: auto;
+    height: 100%;
+}
+
+.footer{
+    text-align: center;
+    width: 99%;
+}
+    

@@ -1,0 +1,11 @@
+.main_page {
+display: flex;
+text-align: center;
+width: 99%;
+height: 60%;
+}
+
+.main_page .part{
+width: 45%;
+}
+
