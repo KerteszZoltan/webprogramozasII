@@ -1,6 +1,7 @@
 <link rel='stylesheet' type='text/css' href='css/szorzo.css' />
 <?php
 include_once "top_nav.php";
+
 $szam = null;
 $i = null;
 if (isset($_REQUEST['melyiket']))

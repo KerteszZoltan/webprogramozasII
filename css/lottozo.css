@@ -1,7 +1,18 @@
-.main_page {
-    display: flex;
+.main_head{
+    width: 99%;
+    text-align: center;
+}
+.main_page{
     text-align: center;
     width: 99%;
-    height: 80%;
+    height: 71.5%;
     padding: 10px;
+    display: block;
+    overflow: auto;
+}
+
+.main_page .part{
+    width: 100%;
+    overflow: auto;
+    text-align: center;
 }

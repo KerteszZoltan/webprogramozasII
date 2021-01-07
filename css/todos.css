@@ -1,9 +1,22 @@
 .todoHead{
     font-size: 15px;
     text-align: center;
+    width: 99%;
+    border: 3px solid black
 }
+
 .main_page{
     height: 76%;
+    overflow: auto;
+}
+
+.main_page .elements{
+    width: 99%;
+    border: 3px solid black;
+}
+.todoHead .texta{
+    width: 400px;
+    height: 100px;
 }
 .footer{
     text-align: center;
