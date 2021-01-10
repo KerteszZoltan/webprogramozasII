@@ -1,25 +1,43 @@
 .todoHead{
-    font-size: 15px;
     text-align: center;
-    width: 99%;
-    border: 3px solid black
-}
-
-.main_page{
-    height: 76%;
-    overflow: auto;
-}
-
-.main_page .elements{
-    width: 99%;
+    width: 98.5%;
     border: 3px solid black;
 }
+
 .todoHead .texta{
     width: 400px;
     height: 100px;
 }
+
+.main_page{
+    height: 59%;
+    overflow: auto;
+}
+.main_page .elements{
+    width: 99%;
+    border: 1px solid black;
+    float:left;
+}
+.elements .elem{
+width:20%;
+float:left;
+text-align: center;
+}
+
 .footer{
     text-align: center;
     width: 99%;
+    
+}
+
+.warning{
+    border: red 1px solid;
+    background-color: rgb(250, 76, 76);
+    text-align: center;
+}
+.success{
+    border: green 1px solid;
+    background-color: rgb(48, 187, 48);
+    text-align: center;
     
 }

@@ -4,15 +4,17 @@
 }
 .main_page{
     text-align: center;
-    width: 99%;
     height: 71.5%;
     padding: 10px;
     display: block;
     overflow: auto;
 }
-
+.footer{
+    text-align: center;
+    width: 99%;
+}
 .main_page .part{
-    width: 100%;
+    width: 99%;
     overflow: auto;
     text-align: center;
 }

@@ -20,4 +20,9 @@ CREATE TABLE `beadando`.`todos` (
     `TActive` INT NOT NULL DEFAULT '1' , 
 PRIMARY KEY (`TID`)) ENGINE = InnoDB;
 
-
+DROP table IF EXISTS `hatter`;
+CREATE TABLE `beadando`.`hatter` ( 
+    `KID` INT NOT NULL AUTO_INCREMENT , 
+    `FID` INT NOT NULL , 
+    `kep` VARCHAR(255) NOT NULL , 
+PRIMARY KEY (`KID`)) ENGINE = InnoDB;
