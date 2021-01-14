@@ -8,7 +8,8 @@ if(!isset($_SESSION)){
 
 echo $fnev = $_REQUEST['fnev'];
 echo $fjelszo = $_REQUEST['fjelszo'];
-$sql="SELECT FID FROM Felhasznalok WHERE Fnev='$fnev' && Fjelszo='$fjelszo'";
+$nJ = md5($fjelszo);
+$sql="SELECT FID FROM Felhasznalok WHERE Fnev='$fnev' && Fjelszo='$nJ'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

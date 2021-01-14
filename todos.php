@@ -17,11 +17,33 @@ if(!empty($_POST))
     $result = $conn->query($sql);   
 }
 ?>
+
 <div class='todoHead'>
     <form method='post' action='_parts/_feldolgozo/_newTodo.php'>
+        <div class='todo part'>
         <input type='text' name='Tnev' placeholder="Add meg teendőd nevét " required><br>
         <textarea class="texta" name='Tleiras' placeholder="Add meg teendőd leírása"></textarea><br>
+        <select name="kategoria" id="kategoria">';
+        <?php 
+        $kats="SELECT * from kategoriak";
+        $resultKats = $conn -> query($kats);
+        if ($resultKats->num_rows > 0) {
+            // output data of each row
+            while($row = $resultKats->fetch_assoc()) {
+            echo '<option>'.$row["Knev"].'</option>';
+            }
+        }
+        ?>
+        </select>
         <input type='submit' value='TODO hozzáadása'/>
+        </div>
+    </form>
+    <form method='post' action='_parts/_feldolgozo/_newKategoria.php'> 
+        <div class='todo part'>
+        <input type='text' name='Kat' placeholder="Add meg a kategória nevét"><br>
+        <input type='submit' value='Kategória hozzáadása'/>
+        </div>
+
     </form>
 </div>
 <div class='main_page'>
@@ -52,7 +74,7 @@ if(!empty($_POST))
             $a = $i;
            echo "<div class='elem'>";
            echo '<form action="todos.php" method="post">';
-           echo "<input type='text' name='sor' value='".$a."'/>";
+           echo $a;
            echo "</div>";
            echo "<div class='elem'>";
            echo "<input type='text' name='Tnev' value='".$row["Tnev"]."'/>";

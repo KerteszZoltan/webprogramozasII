@@ -1,12 +1,21 @@
 .todoHead{
     text-align: center;
     width: 98.5%;
+    height: 23%;
     border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+}
+
+.todoHead.part{
+margin: auto 0;
+width: 50%;
 }
 
 .todoHead .texta{
     width: 400px;
-    height: 100px;
+    height: 80px;
 }
 
 .main_page{

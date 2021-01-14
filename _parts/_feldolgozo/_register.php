@@ -4,6 +4,7 @@ include "../kapcsolat.php";
 
 $jelszo		= $_REQUEST['fjelszo'];
 $nev		= $_REQUEST['fnev'];
+$mJ = md5($jelszo);
 
 $nevCheck = $conn->query( "SELECT * FROM felhasznalok WHERE Fnev = '{$nev}' ");
 
@@ -16,7 +17,7 @@ $nevCheck = $conn->query( "SELECT * FROM felhasznalok WHERE Fnev = '{$nev}' ");
 		}
 	else{
 		$sql ="INSERT INTO felhasznalok (Fnev, Fjelszo) 
-				VALUES ('{$nev}', '{$jelszo}')";
+				VALUES ('{$nev}', '{$mJ}')";
         $result = $conn->query($sql);
         echo "Sikeres regisztráció!";	
         header("Location: http://localhost/todos");
