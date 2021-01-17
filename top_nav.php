@@ -4,6 +4,6 @@
     <a href="szorzo.php" style="border-left:2px solid black"> Szorzótábla </a>
     <a href="todos.php"> Teendők </a>
     <a href="lottozo.php"> Lottózó </a>
-    <a href="kepek.php"> Háttérkép </a>
+    <a href="kepek.php"> Képek </a>
     <a href="profil.php"> Profilom </a>
 </div>

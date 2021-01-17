@@ -7,14 +7,20 @@ if(!isset($_SESSION)){
 $tnev = $_POST['Tnev'];
 $tleiras = $_POST['Tleiras'];
 echo $fid=$_SESSION['fid'];
-
-$sql ="INSERT INTO todos (FID,Tnev, Tleiras) 
-	   VALUES ('{$fid}','{$tnev}', '{$tleiras}')";
+echo $kat=$_POST['kategoria'];
+$katid=0;
+$sqlKat="SELECT * from kategoriak where Knev='$kat'";
+$resultKat = $conn->query($sqlKat);
+if ($resultKat->num_rows > 0) {
+    while($row = $resultKat->fetch_assoc()) {
+        $katid = $row["KID"];
+    }
+}
+$sql ="INSERT INTO todos (FID,Tnev, Tleiras, KID) VALUES ('{$fid}','{$tnev}', '{$tleiras}', '{$katid}')";
 $result = $conn->query($sql);
 if(!$sql){
     echo "sikertelen";
-}else{
-//echo "Sikeres regisztráció!";	
+}else{	
 header("Location: http://localhost/todos/todos.php");
 }
 ?>

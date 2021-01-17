@@ -1,0 +1,41 @@
+.kepfeltoltes{
+    width: 98%;
+    height: 9%;
+    border: 1px solid black;
+    overflow: auto;
+    text-align: center;
+
+}
+
+.danger{
+    border: 1px solid red;
+    background-color: rgb(219, 60, 60);
+    text-align: center;
+}
+
+.main_page {
+    height: 74%;
+    overflow: auto;
+    justify-content: center;
+
+}
+
+.main_page .parts{
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 30%;
+}
+.main_page .desc{
+    padding: 15px;
+    text-align: center;
+}
+
+.main_page .parts:hover{
+    border: 1px solid #777;
+}
+
+.parts img{
+    width: 100%;
+    height: 200px;
+}

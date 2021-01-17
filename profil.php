@@ -40,10 +40,12 @@ $resultSelect = $conn -> query($select);
     echo '<form action="profil.php" method="post">';
     echo "Felhasználónév : ";
     echo $row["Fnev"].'<br>';
+    echo "Jelszó módosítása :<br>";
     echo "Add meg a régi jelszót:";
-    echo '<input type="text" name="Ojelszo"/ required>';
+    echo '<input type="password" name="Ojelszo"/ required>';
     echo '<button type="submit" name="Fid" value="'.$fid.'"> Jelszó módosítása </button>';
     echo '</form>';
+    echo '<br> Profil törlése';
             }
         }
     }else{
@@ -54,7 +56,7 @@ $resultSelect = $conn -> query($select);
             echo $row["Fnev"].'<br>';
             //echo $row["Fnev"];
             echo "Jelszó : ";
-            echo '<input type="text" name="Fjelszo" placeholder="Új jelszó megadása"/>';
+            echo '<input type="password" name="Fjelszo" placeholder="Új jelszó megadása"/>';
             echo '<button type="sumbit" name="Fid" value="'.$fid.'">Mentés</button>';
             echo '</form>';
         }

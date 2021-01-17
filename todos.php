@@ -8,12 +8,13 @@ include_once "_parts/kapcsolat.php";
 include_once "top_nav.php";
 
 
-if(!empty($_POST))
+if(!empty($_POST['id']))
 {
     $tid=$_POST['id'];
     $tnev=$_POST['Tnev'];
     $tleiras=$_POST['Tleiras'];
-    $sql= "UPDATE `todos` SET `Tnev`='$tnev',`Tleiras`='$tleiras' WHERE TID=$tid";
+    $kat = $_POST['kategoria'];
+    $sql= "UPDATE `todos` SET `Tnev`='$tnev',`Tleiras`='$tleiras', `KID` = '$kat' WHERE TID=$tid";
     $result = $conn->query($sql);   
 }
 ?>
@@ -23,7 +24,8 @@ if(!empty($_POST))
         <div class='todo part'>
         <input type='text' name='Tnev' placeholder="Add meg teendőd nevét " required><br>
         <textarea class="texta" name='Tleiras' placeholder="Add meg teendőd leírása"></textarea><br>
-        <select name="kategoria" id="kategoria">';
+        <select name="kategoria" id="kategoria">
+        <option value=""> </option>
         <?php 
         $kats="SELECT * from kategoriak";
         $resultKats = $conn -> query($kats);
@@ -38,12 +40,31 @@ if(!empty($_POST))
         <input type='submit' value='TODO hozzáadása'/>
         </div>
     </form>
-    <form method='post' action='_parts/_feldolgozo/_newKategoria.php'> 
+    <form method='post' action='todos.php'> 
         <div class='todo part'>
-        <input type='text' name='Kat' placeholder="Add meg a kategória nevét"><br>
+        <input type='text' name='Katadd' placeholder="Add meg a kategória nevét"><br>
+        <?php 
+    if(!empty($_POST['Katadd'])){
+        $katname=$_POST['Katadd'];
+        $katCheck= $conn->query( "SELECT * FROM kategoriak WHERE Knev = '{$katname}' ");
+        if($katCheck->num_rows > 0){
+            echo "létezik";
+        }else{
+            $count = strlen($katname);
+            $min = 4;
+            if($count > $min){
+            echo $katAdd ="INSERT INTO kategoriak (Knev) 
+            VALUES ('{$katname}')";
+            $resultKADD = $conn->query($katAdd);
+            header("Location: http://localhost/todos/todos.php");
+            }else{
+                echo "Kérlek adj meg egy kategória nevet<br>A kategóri neve minimum 4 betű<br>";
+            }
+        }
+    }
+    ?>
         <input type='submit' value='Kategória hozzáadása'/>
         </div>
-
     </form>
 </div>
 <div class='main_page'>
@@ -75,7 +96,29 @@ if(!empty($_POST))
            echo "<div class='elem'>";
            echo '<form action="todos.php" method="post">';
            echo $a;
+           echo '<input type="hidden" name="sor" value="'.$a.'"/>';
            echo "</div>";
+           echo "<div class='elem'>";
+            $kid = $row["KID"];
+            $katnev=null;
+            $sqlKatid="SELECT * from kategoriak where KID='$kid'";
+            $resultKat = $conn->query($sqlKatid);
+            if ($resultKat->num_rows > 0) {
+                while($rowkat = $resultKat->fetch_assoc()) {
+                    $katnev = $rowkat["Knev"];
+                }
+            }
+           echo '<select name="kategoria" id="kategoria">';
+           echo '<option value="'.$kid.'">'.$katnev.'</option>';
+           $sqlKatall="SELECT * from kategoriak";
+            $resultKatall = $conn->query($sqlKatall);
+            if ($resultKatall->num_rows > 0) {
+                while($rowkatall = $resultKatall->fetch_assoc()) {
+                    echo '<option value="'.$rowkatall["KID"].'">'.$rowkatall["Knev"].'</option>';
+                }
+            }
+           echo '</select>';
+           echo '</div>';
            echo "<div class='elem'>";
            echo "<input type='text' name='Tnev' value='".$row["Tnev"]."'/>";
            echo "</div>";
