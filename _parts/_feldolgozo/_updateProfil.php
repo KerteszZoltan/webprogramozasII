@@ -13,6 +13,8 @@ if(!empty($_POST)){
     if(!$result){
         echo "nem sikerült a hozzáadás";
     } else{
-    header("Location: http://localhost/todos/profil.php");
+        $_SESSION['fid']='';
+
+        header("Location: http://localhost/todos/");
     }
 }

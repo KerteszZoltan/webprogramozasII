@@ -1,0 +1,10 @@
+.main_page{
+    height: 81%;
+    overflow: auto;
+    text-align: center;
+    margin-top: 1%;
+}
+.main_page .parts{
+    width: 99%;
+    float:left;
+}

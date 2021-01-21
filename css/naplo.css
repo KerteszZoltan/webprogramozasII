@@ -1,0 +1,42 @@
+.head{
+    width: 99%;
+    justify-content: center;
+    text-align: center;
+}
+
+.head p{
+    font-size: 20px;
+}
+input[type=text]{
+    width: 50%;
+}
+.head textarea{
+    width: 50%;
+    height: 45%;
+}
+
+
+
+.main_page{
+    width: 99%;
+    height: 18%;
+}
+
+
+.main_page p{
+    font-size: 20px;
+    text-align: center;
+}
+
+.main_page .parts{
+    width: 99%;
+    height: 60%;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.parts .elem{
+    margin: 10px;
+}

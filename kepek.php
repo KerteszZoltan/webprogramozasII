@@ -1,11 +1,13 @@
 <link rel='stylesheet' type='text/css' href='css/kepek.css' />
 <?php
-include_once "_parts/kapcsolat.php";
-include_once "top_nav.php";
+
 if(!isset($_SESSION)){
   session_start();
   $fid = $_SESSION['fid'];
 }
+if($fid!=null){
+include_once "_parts/kapcsolat.php";
+include_once "top_nav.php";
 ?>
 <div class="kepfeltoltes">
 <form action="kepek.php" method="post" enctype="multipart/form-data">
@@ -79,5 +81,5 @@ if ($resultSelect->num_rows > 0) {
 ?>
 </div>
 <div class='footer'>
-<?php include_once "footer.php"?>
+<?php include_once "footer.php";}else {echo "ERROR 404";}?>
 </div>

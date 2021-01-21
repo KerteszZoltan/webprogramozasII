@@ -12,7 +12,7 @@ $nevCheck = $conn->query( "SELECT * FROM kategoriak WHERE Knev = '{$Knev}' ");
 if($nevCheck->num_rows > 0){
     echo "Már létező Kategoria név!";
     ?>
-    <br><a href="http://localhost/todos/todos.php">Vissza a Teendők oldalra</a>
+    <br><a href="http://localhost/todos/kategoriak.php">Vissza a Kategoriak oldalra</a>
     <?php
     }else{
         $sql ="INSERT INTO kategoriak (Knev) 
@@ -20,10 +20,10 @@ if($nevCheck->num_rows > 0){
         $result = $conn->query($sql);
         if(!$sql){
         echo "sikertelen<br>";
-        echo '<a href="http://localhost/todos/todos.php">Vissza a Teendők oldalra</a>';
+        echo '<a href="http://localhost/todos/kategoriak.php">Vissza a Kategoriak oldalra</a>';
         }else{
         //echo "Sikeres Kategoria Hozzáadása!";	
-        header("Location: http://localhost/todos/todos.php");
+        header("Location: http://localhost/todos/kategoriak.php");
         }
     }
 ?>

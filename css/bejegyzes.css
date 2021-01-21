@@ -1,7 +1,10 @@
 .main_page{
     width: 99%;
-    height: 80%;
+    height: 81%;
+    margin-top: 1%;
+
 }
+
 
 .main_page p{
     font-size: 20px;
@@ -13,8 +16,7 @@
     text-align: center;
 }
 
-.warning{
-    border: red 1px solid;
-    background-color: rgb(250, 76, 76);
-    text-align: center;
+.parts textarea{
+    width: 50%;
+    height: 40%;
 }

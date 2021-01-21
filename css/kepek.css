@@ -3,7 +3,8 @@
     height: 9%;
     border: 1px solid black;
     overflow: auto;
-    text-align: center;
+    text-align: center;margin-top: 1%;
+
 
 }
 
@@ -14,10 +15,9 @@
 }
 
 .main_page {
-    height: 74%;
+    height: 72%;
     overflow: auto;
     justify-content: center;
-
 }
 
 .main_page .parts{

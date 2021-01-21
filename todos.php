@@ -2,8 +2,9 @@
 <?php 
 if(!isset($_SESSION)){
     session_start();
+    $fid = $_SESSION['fid'];
 }
-
+if($fid!=null){
 include_once "_parts/kapcsolat.php";
 include_once "top_nav.php";
 
@@ -27,7 +28,7 @@ if(!empty($_POST['id']))
         <select name="kategoria" id="kategoria">
         <option value=""> </option>
         <?php 
-        $kats="SELECT * from kategoriak";
+        $kats="SELECT * from `kategoriak` where Knev!=''";
         $resultKats = $conn -> query($kats);
         if ($resultKats->num_rows > 0) {
             // output data of each row
@@ -48,7 +49,7 @@ if(!empty($_POST['id']))
         $katname=$_POST['Katadd'];
         $katCheck= $conn->query( "SELECT * FROM kategoriak WHERE Knev = '{$katname}' ");
         if($katCheck->num_rows > 0){
-            echo "létezik";
+            echo "A kategória már létezik<br>";
         }else{
             $count = strlen($katname);
             $min = 4;
@@ -64,7 +65,11 @@ if(!empty($_POST['id']))
     }
     ?>
         <input type='submit' value='Kategória hozzáadása'/>
+        </form>
         </div>
+    </form>
+    <form action='kategoriak.php' method='post'>
+        <input type='submit' value='Kategóriák'/>
     </form>
 </div>
 <div class='main_page'>
@@ -85,6 +90,7 @@ if(!empty($_POST['id']))
             echo "</div>";
     }
 }
+
    if ($result->num_rows > 0) {
        // output data of each row
        while($row = $result->fetch_assoc()) {
@@ -110,7 +116,7 @@ if(!empty($_POST['id']))
             }
            echo '<select name="kategoria" id="kategoria">';
            echo '<option value="'.$kid.'">'.$katnev.'</option>';
-           $sqlKatall="SELECT * from kategoriak";
+           $sqlKatall="SELECT * from `kategoriak` where Knev!='' ";
             $resultKatall = $conn->query($sqlKatall);
             if ($resultKatall->num_rows > 0) {
                 while($rowkatall = $resultKatall->fetch_assoc()) {
@@ -143,5 +149,5 @@ if(!empty($_POST['id']))
 </div>
 
 <div class='footer'>
-<?php include_once "footer.php"?>
+<?php include_once "footer.php";}else {echo "ERROR 404";}?>
 </div>

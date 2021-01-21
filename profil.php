@@ -4,15 +4,13 @@ if(!isset($_SESSION)){
     session_start();
     $fid = $_SESSION['fid'];
 }
-
+if($fid!=null){
 include_once "_parts/kapcsolat.php";
 include_once "top_nav.php";
 $check = null;
 if(!empty($_POST['Fid']))
 {
-    //echo $_POST['Fid'];
-    $ojelszo= $_POST['Ojelszo'];
-    $cojelszo = md5($ojelszo);
+    $cojelszo = md5($_POST['Ojelszo']);
     $sqlCheck="select * from `felhasznalok`";
     $resultCheck = $conn -> query($sqlCheck);
     if ($resultCheck->num_rows > 0) {
@@ -38,33 +36,37 @@ $resultSelect = $conn -> query($select);
         if ($resultSelect->num_rows > 0) {
             while($row = $resultSelect->fetch_assoc()) {
     echo '<form action="profil.php" method="post">';
-    echo "Felhasználónév : ";
-    echo $row["Fnev"].'<br>';
-    echo "Jelszó módosítása :<br>";
+    echo "<p>Felhasználónév : ";
+    echo $row["Fnev"].'</p><hr>';
     echo "Add meg a régi jelszót:";
-    echo '<input type="password" name="Ojelszo"/ required>';
-    echo '<button type="submit" name="Fid" value="'.$fid.'"> Jelszó módosítása </button>';
+    echo '<input type="text" name="Ojelszo"/ required>';
+    echo '<button type="submit" name="Fid" value="'.$fid.'"> Profil módosítása </button>';
     echo '</form>';
-    echo '<br> Profil törlése';
             }
         }
     }else{
     if ($resultSelect->num_rows > 0) {
         while($row = $resultSelect->fetch_assoc()) {
             echo '<form action="_parts/_feldolgozo/_updateProfil.php" method="post">';
-            echo "Felhasználónév : ";
-            echo $row["Fnev"].'<br>';
+            echo "<p>Felhasználónév : ";
+            echo $row["Fnev"].'</p><hr>';
             //echo $row["Fnev"];
             echo "Jelszó : ";
-            echo '<input type="password" name="Fjelszo" placeholder="Új jelszó megadása"/>';
-            echo '<button type="sumbit" name="Fid" value="'.$fid.'">Mentés</button>';
+            echo '<input type="text" name="Fjelszo" placeholder="Új jelszó megadása"/>';
+            echo '<input type="hidden" name="Fid" value="'.$fid.'"/>';
+            echo '<button type="sumbit">Jelszó frissítése</button>';
             echo '</form>';
         }
     }
+    echo '<form action="_parts/_feldolgozo/_deleteProfil.php" method="post">';
+    echo "Profil térlése : ";
+    echo '<button type="submit" name="fid" value="'.$fid.'"> Törlés </button>';
+    echo '</form>';
     }
     ?>
     </div>
 </div>
 <div class='footer'>
-<?php include_once "footer.php"?>
+<?php include_once "footer.php";}else {echo "ERROR 404";}
+?>
 </div>

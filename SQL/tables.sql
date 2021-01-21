@@ -33,3 +33,13 @@ CREATE TABLE `beadando`.`kategoriak` (
     `KID` INT NOT NULL AUTO_INCREMENT , 
     `Knev` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL ,
 PRIMARY KEY (`KID`)) ENGINE = InnoDB;
+
+DROP table IF EXISTS `bejegyzesek`
+CREATE TABLE `beadando`.`bejegyzesek` ( 
+    `BID` INT NOT NULL AUTO_INCREMENT , 
+    `FID` INT NOT NULL , 
+    `Btema` VARCHAR(255) NOT NULL , 
+    `Bejegyzes` TEXT NOT NULL , 
+    `Bletrehozas` TEXT NOT NULL , 
+    `Bmodositas` TEXT NOT NULL , 
+PRIMARY KEY (`BID`)) ENGINE = InnoDB;
