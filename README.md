@@ -80,9 +80,9 @@ Következő böngészőkben tesztelve:
 ## Önellenőrzés
 #### Elvárás
 1. Adatbázis + Backend + Frontend
-      1.1.  Adatbázis: relációs adatbázisban (MySQL) --> kész 
-      1.2. Backend: PHP szkript --> kész
-      1.3. Frontend: HTML + CSS --> kész
+      1.1.  Adatbázis: relációs adatbázisban (MySQL) --> kész <br>
+      1.2. Backend: PHP szkript --> kész <br>
+      1.3. Frontend: HTML + CSS --> kész <br>
 2. Legalább 5 tábla szerepeljen az adatbázisban, amelyeken a CRUD műveletek implementálva vannak, mind backend, mind frontend szintjén. --> Bizonytalan*
 3. Fájlfelöltés és kezelés funkcióját is el kell végezni.  --> kész
 
