@@ -79,7 +79,7 @@ Következő böngészőkben tesztelve:
 
 ## Önellenőrzés
 #### Elvárás
-1. Adatbázis + Backend + Frontend
+1. Adatbázis + Backend + Frontend <br>
       1.1.  Adatbázis: relációs adatbázisban (MySQL) --> kész <br>
       1.2. Backend: PHP szkript --> kész <br>
       1.3. Frontend: HTML + CSS --> kész <br>
