@@ -86,5 +86,5 @@ Következő böngészőkben tesztelve:
 2. Legalább 5 tábla szerepeljen az adatbázisban, amelyeken a CRUD műveletek implementálva vannak, mind backend, mind frontend szintjén. --> Bizonytalan*
 3. Fájlfelöltés és kezelés funkcióját is el kell végezni.  --> kész
 
-*-Bizonytalan, mivel 4 táblán vannak implementálva a CRUD műveletek. A Képek táblához csak hozzáadni, illetve törölni lehet.
+*-Indoklás: Mivel 4 táblán vannak implementálva a CRUD műveletek. A Képek táblához csak hozzáadni, illetve törölni lehet.
 
