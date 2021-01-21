@@ -29,32 +29,32 @@ Tábla szerkezet:
 |Tábla|Mező név|Tulajdonságok|
 |------------|--------|------------------------|
 |Felhasznalok||UTF8_hungarian_ci|
-||FID|id, int, auto_increment
-||Fnev|text, not_null
-||Fjelszo|text, not_null
-|
+||FID|id, int, auto_increment|
+||Fnev|text, not_null|
+||Fjelszo|text, not_null|
+||||
 |Todos| |UTF8_hungarian_ci|
-||TID|id, int, auto_increment
-||FID|Felhasznalok.FID
-||Tleiras|text, not_null
-||TActive|int, not_null
-|
+||TID|id, int, auto_increment|
+||FID|Felhasznalok.FID|
+||Tleiras|text, not_null|
+||TActive|int, not_null|
+||||
 |Kepek| | |
-||KID|id, int, auto_increment
-||FID|int, auto_increment
-||kep|varchar(255), not_null
-|
+||KID|id, int, auto_increment|
+||FID|int, auto_increment|
+||kep|varchar(255), not_null|
+||||
 |Kategoriak| |UTF8_hungarian_ci|
-||KID|id, int, auto_increment
-||Knev|varchar(255), not_null
-|
+||KID|id, int, auto_increment|
+||Knev|varchar(255), not_null|
+||||
 |Bejegyzesek| |UTF8_hungarian_ci|
-||BID|id, int, auto_increment
-||FID|int, not_null
-||Btema|varchar(255), not_null
-||Bejegyzes|TEXT, not_null
-||Bletrehozas|TEXT, not_null
-||Bmodositas|TEXT, not_null
+||BID|id, int, auto_increment|
+||FID|int, not_null|
+||Btema|varchar(255), not_null|
+||Bejegyzes|TEXT, not_null|
+||Bletrehozas|TEXT, not_null|
+||Bmodositas|TEXT, not_null|
 
 ## Megvalósított modulok
 - Bejelentkezés/Regisztráció
